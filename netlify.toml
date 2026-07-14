@@ -1,0 +1,21 @@
+# Configuración de despliegue para Netlify
+# Netlify detecta este archivo automáticamente al conectar el repositorio.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Fallback tipo SPA: cualquier ruta devuelve index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# El service worker no debe cachearse (para que las actualizaciones lleguen)
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

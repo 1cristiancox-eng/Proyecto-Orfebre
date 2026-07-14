@@ -45,6 +45,32 @@ npm run preview    # previsualizar el build
 
 ---
 
+## ☁️ Publicar en internet (para usar desde el celular)
+
+El repositorio ya incluye la configuración lista (`netlify.toml` y `vercel.json`),
+así que el despliegue es prácticamente de **un clic**. Elige una:
+
+### Netlify
+1. Entra a [app.netlify.com](https://app.netlify.com) y crea una cuenta gratis.
+2. **Add new site → Import an existing project** → conecta GitHub y elige el repo
+   `proyecto-orfebre`.
+3. En la rama, selecciona `claude/jewelry-business-app-4cn1gv`.
+4. Netlify leerá `netlify.toml` solo (build `npm run build`, publish `dist`). Pulsa
+   **Deploy**.
+5. Te dará una URL pública, ej. `https://tu-orfebre.netlify.app`.
+
+### Vercel
+1. Entra a [vercel.com](https://vercel.com) y crea una cuenta gratis.
+2. **Add New → Project** → importa el repo `proyecto-orfebre`.
+3. Elige la rama `claude/jewelry-business-app-4cn1gv`. Vercel detecta Vite y usa
+   `vercel.json` automáticamente. Pulsa **Deploy**.
+4. Te dará una URL pública, ej. `https://tu-orfebre.vercel.app`.
+
+> Luego abre esa URL en el celular → menú del navegador → **"Instalar app"**.
+> Cada vez que hagas cambios en la rama, el sitio se actualiza solo.
+
+---
+
 ## 🗄️ Datos y privacidad
 
 - Todos los datos se guardan **localmente en el dispositivo** (IndexedDB). No hay servidor
